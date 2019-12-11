@@ -37,5 +37,27 @@ namespace Palindrome
         {
             return (input == ReverseString(input));
         }
+
+        /// <summary>
+        /// Calculate every possible multiplication between min (inclusive) and max (exclusive).
+        /// Determines the highest possible value that's also a palindrome.
+        /// </summary>
+        /// <param name="min">Minimum value for multiplying. (inclusive)</param>
+        /// <param name="max">Maximum value for multiplying. (exclusive)</param>
+        /// <returns>The highest calculated palindrome result.</returns>
+        int CalculatePalindromes(int min, int max)
+        {
+            int highestResult = -1;
+
+            // The problem demands we check every possible multiplication of two numbers.
+            // We'll have to use two loops instead of one.
+            for (int x = min; x < max; x++)
+            {
+
+            }
+
+            // TEMP
+            return highestResult;
+        }
     }
 }
