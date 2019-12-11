@@ -53,10 +53,24 @@ namespace Palindrome
             // We'll have to use two loops instead of one.
             for (int x = min; x < max; x++)
             {
-
+                for (int y = min; y < max; y++)
+                {
+                    int result = x * y;
+                    // Check for possible palindrome.
+                    if (IsPalindrome(result.ToString()))
+                    {
+                        Console.WriteLine("Found a palindrome: " + result.ToString());
+                        // Higher than the previously stored record?
+                        if (result > highestResult)
+                            highestResult = result;
+                    }
+                }
             }
 
-            // TEMP
+            // Quick check to ensure at least one valid palindrome was found.
+            if (highestResult == -1)
+                Console.WriteLine("WARNING! No valid palindromes were found.");
+
             return highestResult;
         }
     }
