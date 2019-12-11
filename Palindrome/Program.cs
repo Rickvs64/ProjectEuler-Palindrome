@@ -27,9 +27,15 @@ namespace Palindrome
             return new string(chars);
         }
 
+        /// <summary>
+        /// Check a given string to determine whether it's a palindrome.
+        /// (The string must be identical when reversed.)
+        /// </summary>
+        /// <param name="input">Input string to check.</param>
+        /// <returns>Boolean as result, true if the input string is a possible palindrome.</returns>
         bool IsPalindrome(String input)
         {
-            return (input == reverseString(input));
+            return (input == ReverseString(input));
         }
     }
 }
