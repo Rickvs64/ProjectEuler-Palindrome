@@ -14,7 +14,7 @@ namespace Palindrome
             
             // The problem demands we check for palindromes between 100 * 100 and 999 * 999.
             int min = 100;
-            int max = 1000;
+            int max = 999;
             Console.WriteLine("The highest valid palindrome found is: " + CalculatePalindromes(min, max));
         }
 
@@ -44,21 +44,21 @@ namespace Palindrome
         }
 
         /// <summary>
-        /// Calculate every possible multiplication between min (inclusive) and max (exclusive).
+        /// Calculate every possible multiplication between min (inclusive) and max (inclusive).
         /// Determines the highest possible value that's also a palindrome.
         /// </summary>
         /// <param name="min">Minimum value for multiplying. (inclusive)</param>
-        /// <param name="max">Maximum value for multiplying. (exclusive)</param>
+        /// <param name="max">Maximum value for multiplying. (inclusive)</param>
         /// <returns>The highest calculated palindrome result.</returns>
         static int CalculatePalindromes(int min, int max)
         {
             int highestResult = -1;
 
             // The problem demands we check every possible multiplication of two numbers.
-            // We'll have to use two loops instead of one.
-            for (int x = min; x < max; x++)
+            // We'll have to use two loops instead of one. Starting with the highest number.
+            for (int x = min; x <= max; x++)
             {
-                for (int y = min; y < max; y++)
+                for (int y = min; y <= max; y++)
                 {
                     int result = x * y;
                     // Check for possible palindrome.
