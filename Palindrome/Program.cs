@@ -10,7 +10,12 @@ namespace Palindrome
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Starting program.");
+            
+            // The problem demands we check for palindromes between 100 * 100 and 999 * 999.
+            int min = 100;
+            int max = 1000;
+            Console.WriteLine("The highest valid palindrome found is: " + CalculatePalindromes(min, max));
         }
 
         /// <summary>
@@ -18,7 +23,7 @@ namespace Palindrome
         /// </summary>
         /// <param name="input">Input string to be reversed.</param>
         /// <returns>Same as input string but in reverse.</returns>
-        String ReverseString(String input)
+        static String ReverseString(String input)
         {
             // Convert input string into a character array.
             char[] chars = input.ToCharArray();
@@ -33,7 +38,7 @@ namespace Palindrome
         /// </summary>
         /// <param name="input">Input string to check.</param>
         /// <returns>Boolean as result, true if the input string is a possible palindrome.</returns>
-        bool IsPalindrome(String input)
+        static bool IsPalindrome(String input)
         {
             return (input == ReverseString(input));
         }
@@ -45,7 +50,7 @@ namespace Palindrome
         /// <param name="min">Minimum value for multiplying. (inclusive)</param>
         /// <param name="max">Maximum value for multiplying. (exclusive)</param>
         /// <returns>The highest calculated palindrome result.</returns>
-        int CalculatePalindromes(int min, int max)
+        static int CalculatePalindromes(int min, int max)
         {
             int highestResult = -1;
 
